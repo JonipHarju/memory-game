@@ -38,7 +38,7 @@ const cardData = [
   {
     id: 9,
     img: "https://lh5.googleusercontent.com/cEdh2ZY_s_iVtA5mF9dzWjMPluHkQQaU36DpnLNELQu8vyRlbypAgdsy_Zz7godDikA=w2400",
-    name: "MUMMU",
+    name: "Mummu",
   },
   {
     id: 10,

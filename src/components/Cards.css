@@ -7,13 +7,13 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
-
-  height: 100%;
-  width: 100%;
   gap: 1em;
-  align-items: center;
-  justify-content: center;
   text-align: center;
+  width: 100vw;
+}
+
+.cardWrapper {
+  width: 100%;
 }
 
 #asdki {
@@ -22,6 +22,20 @@
 
 .card {
   padding: 30px;
+  border: 1px solid lime;
+  border-radius: 1000px;
+}
+
+.card:hover {
+  box-shadow: 1px 0px 25px 13px rgba(0, 255, 0, 0.75);
+  -webkit-box-shadow: 1px 0px 25px 13px rgba(0, 255, 0, 0.75);
+  -moz-box-shadow: 1px 0px 25px 13px rgba(0, 255, 0, 0.75);
+  cursor: pointer;
+}
+
+.cardName {
+  color: limegreen;
+  font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 1864px) {

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Cards.css";
 
-export default function RenderCards(props) {
-  const [cardArray, setCardArray] = useState(props.cardData);
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+};
 
-  const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  };
+export default function RenderCards(props) {
+  const [cardArray, setCardArray] = useState(shuffleArray(props.cardData));
 
   return (
     <div className="cardsContainer">
@@ -30,7 +30,7 @@ export default function RenderCards(props) {
                 setCardArray(shuffleArray(cardArray));
               }}
             ></img>
-            <p id="cardName">{value.name}</p>
+            <p className="cardName">{value.name}</p>
           </div>
         );
       })}

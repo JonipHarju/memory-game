@@ -1,5 +1,5 @@
 * {
-  background-color: black;
+  background-color: #232323;
   color: lime;
   font-size: 1.2rem;
 }
@@ -19,6 +19,15 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#story {
+}
+
+#instructions {
+}
+
+#pageTitle {
 }
 
 .header2 {
