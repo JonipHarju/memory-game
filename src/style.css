@@ -1,4 +1,29 @@
 * {
   background-color: black;
   color: lime;
+  font-size: 1.2rem;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin: 10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header2 {
+  margin-bottom: 20px;
+}
+.header3 {
+  margin: 0;
 }

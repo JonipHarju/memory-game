@@ -18,10 +18,9 @@ export default function RenderCards(props) {
     <div className="cardsContainer">
       {cardArray.map((value) => {
         return (
-          <div key={value.id} className="cardWrapper">
+          <div key={value.id} className="cardWrapper" id={value.name}>
             <img
               className="card"
-              id={value.name}
               src={value.img}
               key={value.id}
               alt="gamecard"

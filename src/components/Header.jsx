@@ -6,8 +6,17 @@ export default function Header(props) {
       <div>
         <h1>Memory card game!</h1>
       </div>
-      <div>score: {props.score}</div>
-      <div>Highest Score: {props.highScore}</div>
+      <h2 className="header2">score: {props.score}</h2>
+      <h3 className="header3">Highest Score: {props.highScore}</h3>
+      <p id="story">
+        Warning!! Highly dangerous group of criminals called Hurjat Harjut &
+        Hagnäs has broken ot ouf kellari in Högnäs! Capture them before they
+        wreck havoc across the globe... The world is counting on you!
+      </p>
+      <p id="instructions">
+        To win click each scum once and once only.. Otherwise atom bomb goes
+        off!!!!!
+      </p>
     </nav>
   );
 }

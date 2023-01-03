@@ -36,11 +36,6 @@ const cardData = [
     name: "Tanja",
   },
   {
-    id: 8,
-    img: "https://scontent-arn2-2.xx.fbcdn.net/v/t1.18169-9/10888972_584856061645840_5924788684795777284_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=N1LPxQUpCN0AX8BxHAC&_nc_ht=scontent-arn2-2.xx&oh=00_AfAeJTd2goqsH-2UDZWj7Xb2KUfVWOg68UEkMQra3Dwl6g&oe=63DB818F",
-    name: "Marke",
-  },
-  {
     id: 9,
     img: "https://lh5.googleusercontent.com/cEdh2ZY_s_iVtA5mF9dzWjMPluHkQQaU36DpnLNELQu8vyRlbypAgdsy_Zz7godDikA=w2400",
     name: "MUMMU",

@@ -1,11 +1,57 @@
 .card {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
 
 .cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  height: 100%;
+  width: 100%;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-# {
+#asdki {
   height: 1000px;
+}
+
+.card {
+  padding: 30px;
+}
+
+@media only screen and (max-width: 1864px) {
+  .card {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .card {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

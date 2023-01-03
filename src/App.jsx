@@ -17,7 +17,7 @@ export default function App() {
     if (score > bestScore) {
       setBestScore(score);
     }
-    if (score === 11) {
+    if (score === 10) {
       alert("HOLY SHIT YOU BEAT THE GAME!!! ACTUAL GOD GAMER");
       setScore(0);
       setClickedCards([]);
@@ -33,7 +33,9 @@ export default function App() {
     } else {
       setScore(0);
       setClickedCards([]);
-      alert("you lost hahaha");
+      alert(
+        "BOOOOOOOOOOOOM!!!!!!!!!! THE ATOM BOMB WENT OFF AND THE WHOLE STATE OF HÖGNÄS WAS DESTROYED"
+      );
     }
   };
 
