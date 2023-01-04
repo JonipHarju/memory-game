@@ -32,7 +32,7 @@ export default function RenderCards(props) {
                 setCardArray(shuffleArray(cardArray));
               }}
             ></img>
-            <Link to={`/Info/${value.name}`} state={value}>
+            <Link to={`/memory-game/info/${value.name}`} state={value}>
               <button className="cardName">{value.name}</button>
             </Link>
           </div>

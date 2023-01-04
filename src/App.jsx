@@ -22,7 +22,7 @@ export default function App() {
     }
     if (score === 10) {
       alert(
-        "HOLY SHIT YOU BEAT THE GAME!!! ACTUAL GOD GAMER!!  PRICE WINDOW WILL OPEN WHEN YOU PRESS OK SO YOU CAN CLAIM YOUR PRIZE"
+        "HOLY SHIT YOU BEAT THE GAME!!! ACTUAL GOD GAMER!!!! CLAIM YOUR PRIZE BY PRESSING OK(if pop ups not blocked :---(... )"
       );
       window.open(
         "https://www.s-kaupat.fi/tuote/hk-sininen-lenkkir-580-g/6409100050306"
@@ -57,7 +57,7 @@ export default function App() {
         {/* /> */}
         <Routes>
           <Route
-            path="/"
+            path="/memory-game"
             element={
               <RenderCards
                 cardData={cardData}
@@ -65,7 +65,10 @@ export default function App() {
               />
             }
           />
-          <Route path="/info/:url" element={<Info cardData={cardData} />} />
+          <Route
+            path="memory-game/info/:url"
+            element={<Info cardData={cardData} />}
+          />
         </Routes>
       </div>
     </BrowserRouter>
