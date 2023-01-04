@@ -24,6 +24,7 @@
   padding: 30px;
   border: 1px solid lime;
   border-radius: 1000px;
+  transition: 500ms;
 }
 
 .card:hover {
@@ -36,6 +37,19 @@
 .cardName {
   color: limegreen;
   font-size: 1.5rem;
+  background-color: black;
+  border: 1px solid lime;
+  border-radius: 10px;
+  transition: 500ms;
+}
+
+.cardName:hover {
+  cursor: pointer;
+  box-shadow: 1px 0px 25px 13px rgba(0, 255, 0, 0.1);
+  -webkit-box-shadow: 1px 0px 25px 13px rgba(0, 255, 0, 0.1);
+  -moz-box-shadow: 1px 0px 25px 13px rgba(0, 255, 0, 0.1);
+  background-color: limegreen;
+  color: black;
 }
 
 @media only screen and (max-width: 1864px) {

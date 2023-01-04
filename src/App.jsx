@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import cardData from "./components/CardData";
 import RenderCards from "./components/RenderCards";
+import Info from "./components/Info";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "./style.css";
 
 export default function App() {
@@ -18,7 +21,12 @@ export default function App() {
       setBestScore(score);
     }
     if (score === 10) {
-      alert("HOLY SHIT YOU BEAT THE GAME!!! ACTUAL GOD GAMER");
+      alert(
+        "HOLY SHIT YOU BEAT THE GAME!!! ACTUAL GOD GAMER!!  PRICE WINDOW WILL OPEN WHEN YOU PRESS OK SO YOU CAN CLAIM YOUR PRIZE"
+      );
+      window.open(
+        "https://www.s-kaupat.fi/tuote/hk-sininen-lenkkir-580-g/6409100050306"
+      );
       setScore(0);
       setClickedCards([]);
     }
@@ -40,12 +48,26 @@ export default function App() {
   };
 
   return (
-    <div className="App">
-      <Header score={score} highScore={bestScore} />
-      <RenderCards
-        cardData={cardData}
-        checkClickedCards={checkClickedCardsState}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header score={score} highScore={bestScore} />
+        {/* <RenderCards
+          cardData={cardData}
+          checkClickedCards={checkClickedCardsState} */}
+        {/* /> */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <RenderCards
+                cardData={cardData}
+                checkClickedCards={checkClickedCardsState}
+              />
+            }
+          />
+          <Route path="/info/:url" element={<Info cardData={cardData} />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Cards.css";
 
 const shuffleArray = (array) => {
@@ -12,6 +13,7 @@ const shuffleArray = (array) => {
 };
 
 export default function RenderCards(props) {
+  console.log("tässä pitäis olal card data", props.cardData);
   const [cardArray, setCardArray] = useState(shuffleArray(props.cardData));
 
   return (
@@ -30,7 +32,9 @@ export default function RenderCards(props) {
                 setCardArray(shuffleArray(cardArray));
               }}
             ></img>
-            <p className="cardName">{value.name}</p>
+            <Link to={`/Info/${value.name}`} state={value}>
+              <button className="cardName">{value.name}</button>
+            </Link>
           </div>
         );
       })}
