@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import cardData from "./CardData";
 import "./Cards.css";
 
 const shuffleArray = (array) => {
@@ -13,8 +14,8 @@ const shuffleArray = (array) => {
 };
 
 export default function RenderCards(props) {
-  console.log("tässä pitäis olal card data", props.cardData);
-  const [cardArray, setCardArray] = useState(shuffleArray(props.cardData));
+  console.log("tässä pitäis olal card data", cardData);
+  const [cardArray, setCardArray] = useState(shuffleArray(cardData));
 
   return (
     <div className="cardsContainer">
@@ -29,7 +30,7 @@ export default function RenderCards(props) {
               onClick={() => {
                 console.log("moi tästä id:stä -->", value.id);
                 props.checkClickedCards(value.id);
-                setCardArray(shuffleArray(cardArray));
+                setCardArray(shuffleArray(cardData));
               }}
             ></img>
             <Link to={`/memory-game/info/${value.name}`} state={value}>

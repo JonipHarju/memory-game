@@ -2,9 +2,9 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import cardData from "./CardData";
 
-export default function Info() {
+export default function Info(props) {
+  console.log({ props });
   const location = useLocation();
-  console.log(location, "gugauguaguauguau", cardData);
 
   if (location.state === null) {
     console.log(location.state);

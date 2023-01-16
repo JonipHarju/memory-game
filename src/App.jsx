@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Header from "./components/Header";
 import cardData from "./components/CardData";
 import RenderCards from "./components/RenderCards";
@@ -15,8 +15,7 @@ export default function App() {
   // useEffect for high score?  if score > bestScore setBestScore(score)
   // state to hold all the cards that have been clicked
   const [clickedCards, setClickedCards] = useState([]);
-
-  useEffect(() => {
+  const onScoreUpdate = () => {
     if (score > bestScore) {
       setBestScore(score);
     }
@@ -30,14 +29,14 @@ export default function App() {
       setScore(0);
       setClickedCards([]);
     }
-  }, [score, bestScore]);
+  };
+  useEffect(onScoreUpdate, [score]);
 
   //function to check if the card has been clicked(if the cards id exists in the clickedCards array)
-  const checkClickedCardsState = (value) => {
+  const checkClickedCardsState = useCallback((value) => {
     if (clickedCards.indexOf(value) === -1) {
-      setScore(score + 1);
-      clickedCards.push(value);
-      setClickedCards(clickedCards);
+      setScore((previousState) => previousState + 1);
+      setClickedCards((previousState) => [...previousState, value]);
     } else {
       setScore(0);
       setClickedCards([]);
@@ -45,7 +44,7 @@ export default function App() {
         "BOOOOOOOOOOOOM!!!!!!!!!! THE ATOM BOMB WENT OFF AND THE WHOLE STATE OF HÖGNÄS WAS DESTROYED"
       );
     }
-  };
+  }, []);
 
   return (
     <BrowserRouter>
@@ -58,12 +57,7 @@ export default function App() {
         <Routes>
           <Route
             path="/memory-game"
-            element={
-              <RenderCards
-                cardData={cardData}
-                checkClickedCards={checkClickedCardsState}
-              />
-            }
+            element={<RenderCards checkClickedCards={checkClickedCardsState} />}
           />
           <Route
             path="memory-game/info/:url"

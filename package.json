@@ -40,6 +40,9 @@
     ]
   },
   "devDependencies": {
+    "@welldone-software/why-did-you-render": "^7.0.1",
+    "eslint": "^8.31.0",
+    "eslint-plugin-react": "^7.31.11",
     "gh-pages": "^4.0.0"
   }
 }
